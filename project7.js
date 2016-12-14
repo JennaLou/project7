@@ -31,8 +31,37 @@ function drawCircle(x,y,size,color){
   screen.appendChild(newcircle)
 }
 
+var drawing = false
 // Step 3: Event listeners
 document.addEventListener("mousedown", function(e) {
-  // what do you want to do when the user presses down
-  // on the mouse button?
+ // what do you want to do when the user presses down
+ // on the mouse button?ss
+ drawing = true
+})
+
+document.addEventListener("mouseup", function(e) {
+ // what do you want to do when the user presses down
+ // on the mouse button?
+ drawing= false
+})
+
+document.addEventListener("mousemove", function(e) {
+ // what do you want to do when the user presses down
+ // on the mouse button?
+var point = transformPoint(e)
+
+var selectShape = document.getElementById("shapeSelect").value
+var selectColor = document.getElementById("colorSelect").value
+var selectSize  = document.getElementById("sizeSelct")
+
+
+
+ if(drawing) {
+
+   If(selectShape == "square"){
+
+   }
+   drawSquare(point.x, point.y, 15,"blue")
+
+ }
 })
