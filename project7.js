@@ -48,20 +48,21 @@ document.addEventListener("mouseup", function(e) {
 document.addEventListener("mousemove", function(e) {
  // what do you want to do when the user presses down
  // on the mouse button?
-var point = transformPoint(e)
+ var point = transformPoint(e)
+
 
 var selectShape = document.getElementById("shapeSelect").value
 var selectColor = document.getElementById("colorSelect").value
-var selectSize  = document.getElementById("sizeSelct")
+var selectSize  = document.getElementById("sizeSelect").value
 
 
 
  if(drawing) {
 
-   If(selectShape == "square"){
-
+   if(selectShape == "circle") {
+  drawCircle(point.x, point.y, selectSize ,selectColor)
    }
-   drawSquare(point.x, point.y, 15,"blue")
 
- }
-})
+   drawSquare(point.x, point.y, selectSize ,selectColor)
+
+ }})
